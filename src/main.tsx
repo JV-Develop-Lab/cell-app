@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
 
 import './index.css'
 import CssBaseline from '@mui/material/CssBaseline';
@@ -10,10 +9,18 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
+import "@stackflow/plugin-basic-ui/index.css";
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-      <CssBaseline />
-      <App />
-  </React.StrictMode>,
-)
+import App from "./App";
+
+// Render our app!
+const rootElement = document.getElementById('root')!
+if (!rootElement.innerHTML) {
+    const root = ReactDOM.createRoot(rootElement)
+    root.render(
+        <React.StrictMode>
+            <CssBaseline/>
+            <App/>
+        </React.StrictMode>,
+    )
+}
